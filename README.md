@@ -2,4 +2,4 @@
 Sistema de agendamento de contatos e ligações
 
 - Sistema prompt CMD
-- Utilizando JDBC
+- Utilizando JDBC e MAVEN
