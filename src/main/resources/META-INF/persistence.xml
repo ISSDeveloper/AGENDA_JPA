@@ -4,14 +4,15 @@
    xsi:schemaLocation="
         http://xmlns.jcp.org/xml/ns/persistence
         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-   <persistence-unit name="sncolaboradorsrvPersistenceUnit">
+        
+   <persistence-unit name="snAgendaPersistenceUnit">
 
       <properties>
 
 		<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
         <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@kanto:1521:orcl"/>
-        <property name="javax.persistence.jdbc.user" value="click" />
-        <property name="javax.persistence.jdbc.password" value="falaae" />
+        <property name="javax.persistence.jdbc.user" value="AGENDA" />
+        <property name="javax.persistence.jdbc.password" value="123456" />
 
          <property name="javax.persistence.schema-generation.database.action" value="none"/>
          <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
