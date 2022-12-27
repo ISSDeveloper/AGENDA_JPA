@@ -1,5 +1,5 @@
 # Agenda-CMD-JDBC
-Sistema de agendamento de contatos e ligações
+Sistema de agenda de contatos
 
 - Sistema prompt CMD
 - Utilizando JDBC e MAVEN
