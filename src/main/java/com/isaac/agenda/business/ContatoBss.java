@@ -45,22 +45,7 @@ public class ContatoBss extends Bss<Contato> {
 	public void update(Contato contato) throws BssException {
 
 		try {
-
-			if (contato.getNome().isEmpty() || contato.getTelefone() == 0) {
-
-				Contato contatoAntigo = getEntity(contato.getCodContato());
-
-				if (contato.getNome().isEmpty()) {
-					contato.setNome(contatoAntigo.getNome());
-				}
-
-				if (contato.getTelefone() == 0) {
-					contato.setTelefone(contatoAntigo.getTelefone());
-				}
-			}
-
 			dao.merge(contato);
-
 		} catch (Exception e) {
 			throw new BssException(e);
 		}
@@ -68,10 +53,10 @@ public class ContatoBss extends Bss<Contato> {
 
 	public void remove(Long codContato) throws BssException {
 		try {
-
 			dao.remove(codContato);
 		} catch (Exception e) {
 			throw new BssException(e);
 		}
 	}
+
 }

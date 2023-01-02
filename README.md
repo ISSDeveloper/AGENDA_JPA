@@ -1,5 +1,5 @@
 # Agenda-CMD-JDBC
-Sistema de agenda de contatos
+Sistema de cadastro basico de contato e telefones em prompt
 
-- Sistema prompt CMD
-- Utilizando JDBC e MAVEN
+- JPA Hibenate
+- Maven

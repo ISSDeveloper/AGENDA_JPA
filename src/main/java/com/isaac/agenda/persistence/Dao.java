@@ -31,28 +31,28 @@ public class Dao<T> implements Serializable {
 	}
 
 	public T merge(T t) {
-		
+
 		em.getTransaction().begin();
 		t = em.merge(t);
 		em.getTransaction().commit();
-		
+
 		return t;
 	}
 
 	public void detach(T d) {
-		
+
 		em.getTransaction().begin();
 		em.detach(d);
 		em.getTransaction().commit();
 	}
 
 	public void refresh(T t) {
-		
+
 		em.getTransaction().begin();
 		em.refresh(t);
 		em.getTransaction().commit();
 	}
-	
+
 	public void remove(Object pk) {
 
 		em.getTransaction().begin();
@@ -94,15 +94,20 @@ public class Dao<T> implements Serializable {
 	}
 
 	public void execute(String sql) {
-
+		
+		em.getTransaction().begin();
 		Query query = em.createQuery(sql);
 		query.executeUpdate();
+		em.getTransaction().commit();
 	}
-	
-	public void executeNativeQuery(String sql) {
 
+	public void executeNativeQuery(String sql) {
+		
+		em.getTransaction().begin();
 		Query query = em.createNativeQuery(sql);
 		query.executeUpdate();
+		em.getTransaction().commit();
+
 	}
 
 	public List<Object> getListDistinct(String campo) {
@@ -168,7 +173,7 @@ public class Dao<T> implements Serializable {
 
 	public Integer getMaxValInt(String campo, String cond) {
 
-		Query query = em.createQuery("select max(" + campo + ") from " + clazz.getName() + " " + cond);
+		Query query = em.createQuery("select max(" + campo + ") from " + clazz.getName() + " where " + cond);
 		Object cod = query.getSingleResult();
 
 		if (cod == null)
@@ -218,7 +223,7 @@ public class Dao<T> implements Serializable {
 
 		return (Long) cod;
 	}
-	
+
 	public Long countLongByNativeQuery(String condicao) {
 
 		Query query = em.createNativeQuery(condicao);
