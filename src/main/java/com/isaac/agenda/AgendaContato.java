@@ -138,7 +138,12 @@ public class AgendaContato {
 		String nome = br.readLine();
 
 		if (nome.trim().isEmpty()) {
-			return nomeAntigo;
+			if(Objects.nonNull(nomeAntigo))
+				return nomeAntigo;
+			else {
+				System.out.println(Ansi.VERMELHO + "Nome invalido!" + Ansi.RESET);
+				return getNome();
+			}
 		}
 
 		if ("*".equals(nome)) {
@@ -167,7 +172,9 @@ public class AgendaContato {
 		String telefone = br.readLine();
 
 		if (telefone.trim().isEmpty()) {
-			return telefoneAntigo;
+			
+			if(Objects.nonNull(telefoneAntigo))
+				return telefoneAntigo;
 		}
 
 		if ("*".equals(telefone)) {

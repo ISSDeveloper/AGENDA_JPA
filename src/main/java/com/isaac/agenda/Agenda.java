@@ -25,6 +25,7 @@ public class Agenda {
 				switch (opcao) {
 				case 1 -> agendaContato.menu();
 				case 2 -> agendaLigacao.menu();
+				case 3 -> {System.out.println("adeus..."); System.exit(0);}
 				}
 			}
 		} catch (Exception e) {
@@ -38,7 +39,8 @@ public class Agenda {
 		System.out.println(Ansi.BG_VERDE + Ansi.BRANCO + "         MENU         " + Ansi.RESET);
 		System.out.println("---------------------");
 		System.out.println("1 - Menu contato");
-		System.out.println("2 - Menu telefone");
+		System.out.println("2 - Menu ligação");
+		System.out.println("3 - Sair");
 		System.out.println("---------------------");
 
 		return getOpcao();
@@ -49,7 +51,7 @@ public class Agenda {
 		System.out.print(Ansi.VERDE + "Digite uma opção: " + Ansi.RESET);
 		String op = br.readLine();
 
-		if (!("1".equals(op) || "2".equals(op))) {
+		if (!("1".equals(op) || "2".equals(op) || "3".equals(op))) {
 
 			System.out.println(Ansi.VERMELHO + "Opção invalida!" + Ansi.RESET);
 			System.out.println();

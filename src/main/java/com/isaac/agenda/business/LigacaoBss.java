@@ -23,7 +23,7 @@ public class LigacaoBss extends Bss<Ligacao> {
 	public List<Ligacao> getList() throws BssException {
 
 		try {
-			return dao.getList("order by contato.nome, id.codContato");
+			return dao.getList("order by contato.nome, id.codLigacao");
 
 		} catch (Exception e) {
 			throw new BssException(e);
