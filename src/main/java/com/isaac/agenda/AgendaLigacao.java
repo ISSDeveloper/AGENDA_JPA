@@ -365,8 +365,7 @@ public class AgendaLigacao {
 
 		ligacaoBss.remove(new LigacaoId(codLigacao, codContato));
 		System.out.print(Ansi.VERDE + "Ligação removida! " + Ansi.RESET);
-		System.out.println();
-		System.out.println();
+		System.out.println("\n");
 	}
 
 	public Long getCodCodigo(List<Ligacao> lista) throws Exception {
