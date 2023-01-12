@@ -4,17 +4,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import com.isaac.agenda.business.ContatoBss;
+import com.isaac.agenda.business.LigacaoBss;
 import com.isaac.agenda.color.Ansi;
 
 public class Agenda {
 
 	private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	
+	private static ContatoBss contatoBss = new ContatoBss();
+	private static LigacaoBss ligacaoBss = new LigacaoBss();
 
 	public static void main(String[] args) {
 		try {
 
-			AgendaContato agendaContato = new AgendaContato(br);
-			AgendaLigacao agendaLigacao = new AgendaLigacao(br);
+			AgendaContato agendaContato = new AgendaContato(br, contatoBss);
+			AgendaLigacao agendaLigacao = new AgendaLigacao(br, contatoBss, ligacaoBss);
 
 			System.out.printf(Ansi.BG_AZUL + Ansi.BRANCO + "       -AGENDA-       " + Ansi.RESET + "%n");
 

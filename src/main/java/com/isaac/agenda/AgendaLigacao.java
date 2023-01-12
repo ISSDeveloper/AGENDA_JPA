@@ -18,11 +18,13 @@ import com.isaac.agenda.util.Funcoes;
 public class AgendaLigacao {
 
 	private BufferedReader br;
-	private LigacaoBss ligacaoBss = new LigacaoBss();
-	private ContatoBss contatoBss = new ContatoBss();
+	private LigacaoBss ligacaoBss;
+	private ContatoBss contatoBss;
 
-	public AgendaLigacao(BufferedReader br) {
+	public AgendaLigacao(BufferedReader br, ContatoBss contatoBss, LigacaoBss ligacaoBss) {
 		this.br = br;
+		this.contatoBss = contatoBss;
+		this.ligacaoBss = ligacaoBss;
 	}
 
 	public void menu() throws Exception {
@@ -208,7 +210,7 @@ public class AgendaLigacao {
 
 	private String getObservacao(String obsAntigo) throws IOException {
 
-		System.out.print(Ansi.VERDE + "Digite a observação: " + Ansi.RESET);
+		System.out.print(Ansi.VERDE + "Digite a observação ["+obsAntigo+"]: " + Ansi.RESET);
 		String obs = br.readLine();
 
 		if (obs.trim().isEmpty()) {
@@ -364,6 +366,7 @@ public class AgendaLigacao {
 			return;
 
 		ligacaoBss.remove(new LigacaoId(codLigacao, codContato));
+		
 		System.out.print(Ansi.VERDE + "Ligação removida! " + Ansi.RESET);
 		System.out.println("\n");
 	}

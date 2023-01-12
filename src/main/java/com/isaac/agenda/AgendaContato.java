@@ -13,10 +13,11 @@ import com.isaac.agenda.exception.BssException;
 public class AgendaContato {
 
 	private BufferedReader br;
-	private ContatoBss contatoBss = new ContatoBss();
+	private ContatoBss contatoBss;
 
-	public AgendaContato(BufferedReader br) {
+	public AgendaContato(BufferedReader br, ContatoBss contatoBss) {
 		this.br = br;
+		this.contatoBss = contatoBss;
 	}
 
 	public void menu() throws Exception {
